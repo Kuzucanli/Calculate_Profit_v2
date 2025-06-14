@@ -278,6 +278,7 @@ def technical_analysis(ticker, interval, start_date, end_date):
             'Tillson T3', 'MACD', 'RSI', 'Momentum', 'ATR', 'Bollinger Bands', 'SALMA'
         ],
         default=['SMA']
+        
     )
 
     # Mevcut teknik analiz kodunu çalıştır
