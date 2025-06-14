@@ -286,4 +286,13 @@ def technical_analysis(ticker, interval, start_date, end_date):
 
     # Kazanç hesaplama butonu
     if st.sidebar.button('Calculate Profit'):
+        market = st.sidebar.selectbox('Select Market', options=['OTHER', 'BIST'])
+        ticker = st.sidebar.text_input("Stock Code (e.g., AAPL)", value="AAPL")
+        if market == 'BIST':
+            ticker = ticker + '.IS'
+        today = datetime.today().date() + timedelta(days=1)
+        one_year_ago = today - timedelta(days=365)
+        start_date = st.sidebar.date_input("Start Date", value=one_year_ago)
+        end_date = st.sidebar.date_input("End Date", value=today)
+        interval = st.sidebar.selectbox('Interval', options=['1h', '4h', '1d', '5d', '1wk', '1mo', '3mo'])
         calculate_profit(ticker, interval, start_date, end_date, indicators)
