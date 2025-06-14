@@ -268,21 +268,6 @@ def calculate_profit(ticker, interval, start_date, end_date, indicators):
     )
     st.plotly_chart(fig, use_container_width=True)
 
-# Teknik analiz fonksiyonuna kazanç hesaplama entegrasyonu
-def technical_analysis(ticker, interval, start_date, end_date):
-    """Performs stock analysis with multiple selected technical indicators and signals."""
-    indicators = st.sidebar.multiselect(
-        'Indicators',
-        options=[
-            'SMA', 'EMA', 'SuperTrend', 'Fibonacci', 'Inverse Fisher Transform (STOCH,RSI,CCI)',
-            'Tillson T3', 'MACD', 'RSI', 'Momentum', 'ATR', 'Bollinger Bands', 'SALMA'
-        ],
-        default=['SMA']
-        
-    )
-
-    # Mevcut teknik analiz kodunu çalıştır
-    # ... (orijinal technical_analysis kodunuz buraya gelecek)
 
     # Kazanç hesaplama butonu
     if st.sidebar.button('Calculate Profit'):
